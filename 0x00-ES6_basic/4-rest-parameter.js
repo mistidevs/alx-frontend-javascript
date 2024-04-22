@@ -1,7 +1,4 @@
 export default function returnHowManyArguments(...args) {
-  let numArgs = 0;
-  for (let i of args) {
-    numArgs += 1;
-  }
+  let numArgs = args.length;
   return numArgs;
 }
