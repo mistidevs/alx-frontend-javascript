@@ -1,5 +1,5 @@
 export default function createIteratorObject(report) {
-  report.allEmployees[Symbol.iterator] = function() {
+  report[Symbol.iterator] = function() {
     const keys = Object.keys(this);
     let index = 0;
 
@@ -15,5 +15,4 @@ export default function createIteratorObject(report) {
       }
     };
   };
-  return report.allEmployees;
 }
