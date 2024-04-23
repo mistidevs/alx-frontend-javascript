@@ -1,5 +1,5 @@
 export default function createIteratorObject(report) {
-  const myList = Object.values(report.allEmployees);
+  const myList = Object.values(Object.values(report.allEmployees));
 
   myList[Symbol.iterator] = function() {
     const keys = Object.keys(this);

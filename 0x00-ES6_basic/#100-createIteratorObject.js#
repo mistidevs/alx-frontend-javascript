@@ -1,8 +1,10 @@
 export default function createIteratorObject(report) {
-  report[Symbol.iterator] = function() {
+  const myVals = Object.values(report.allEmployees);
+  
+  myList[Symbol.iterator] = function() {
     const keys = Object.keys(this);
     let index = 0;
-
+    
     return {
       next: () => {
         if (index < keys.length) {
@@ -15,4 +17,6 @@ export default function createIteratorObject(report) {
       }
     };
   };
+
+  return myList;
 }
