@@ -1,19 +1,5 @@
 export default function createIteratorObject(report) {
-  report.allEmployees[Symbol.iterator] = function() {
-    const keys = Object.keys(this);
-    let index = 0;
+  myList = Object.values(report.allEmployees);
 
-    return {
-      next: () => {
-        if (index < keys.length) {
-          const key = keys[index];
-          index++;
-          return { value: [key, this[key]], done: false };
-        } else {
-          return { done: true };
-        }
-      }
-    };
-  };
-  return report.allEmployees;
+  return myList;
 }
