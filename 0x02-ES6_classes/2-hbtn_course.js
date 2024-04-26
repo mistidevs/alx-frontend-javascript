@@ -5,12 +5,12 @@ export default class HolbertonCourse {
     this._students = students;
   }
 
-  isArrayofStrings(value) {
+  static isArrayofStrings(value) {
     if (!Array.isArray(value)) {
       return false;
     }
 
-    for (let i = 0; i < value.length; i++) {
+    for (const i of value.length) {
       if (typeof value[i] !== 'string') {
         return false;
       }
@@ -42,10 +42,10 @@ export default class HolbertonCourse {
       this._length = newLength;
     }
   }
-  
+
   set students(newStudents) {
     if (isArrayofStrings(newStudents) === true) {
       this._students = newStudents;
-    } 
+    }
   }
 }
