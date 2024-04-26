@@ -9,8 +9,6 @@ export default class HolbertonClass {
       return (this._location);
     } else if (hint === 'number') {
       return (this._size);
-    } else {
-      return ('[object HolbertonClass]')
     }
   }
 }
