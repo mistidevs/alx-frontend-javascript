@@ -44,7 +44,7 @@ export default class HolbertonCourse {
   }
 
   static _verifyArrayOfStrings(value, propName) {
-    if (!Array.isArray(value) || value.some(item => typeof item !== 'string')) {
+    if (!Array.isArray(value) || value.some((item) => typeof item !== 'string')) {
       throw new TypeError(`${propName} must be an array of strings`);
     }
     return value;
