@@ -44,7 +44,7 @@ export default class HolbertonCourse {
   }
 
   set students(newStudents) {
-    if (isArrayofStrings(newStudents) === true) {
+    if (HolbertonCourse.isArrayofStrings(newStudents) === true) {
       this._students = newStudents;
     }
   }
