@@ -3,7 +3,7 @@ export default function getListStudentIds(students, location, newGrades) {
     return [];
   }
 
-  if (!students.every(student => typeof student === 'object')) {
+  if (!students.every(student => (typeof student === 'object'))) {
     return [];
   }
 
@@ -11,10 +11,10 @@ export default function getListStudentIds(students, location, newGrades) {
     return [];
   }
 
-  const studentsLoc = students.filter(student => student.location === location);
+  const studentsLoc = students.filter(student => (student.location === location));
 
-  const studentsGrades = studentsLoc.map(student => {
-    const newGrade = newGrades.find(grade => grade.studentId === student.id);
+  const studentsGrades = studentsLoc.map((student) => {
+    const newGrade = newGrades.find(grade => (grade.studentId === student.id));
 
     if (newGrade) {
       student.grade = newGrade.grade;
