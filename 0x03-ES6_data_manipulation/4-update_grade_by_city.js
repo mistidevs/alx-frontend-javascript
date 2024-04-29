@@ -12,18 +12,17 @@ export default function getListStudentIds(students, location, newGrades) {
   }
 
   const studentsLoc = students.filter(student => student.location === location);
+
   const studentsGrades = studentsLoc.map(student => {
-    if (newGrades.studentId === student.id) {
-      student.grade = newGrades.grade;
+    const newGrade = newGrades.find(grade => grade.studentId === student.id);
+
+    if (newGrade) {
+      student.grade = newGrade.grade;
+    } else {
+      student.grade = 'N/A';
     }
 
     return student;
-  });
-
-  studentsGrades.forEach(student => {
-    if (student.grade === undefined) {
-      student.grade = 'N/A';
-    }
   });
 
   return studentsGrades;
