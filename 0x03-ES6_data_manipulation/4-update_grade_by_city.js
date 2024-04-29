@@ -16,6 +16,8 @@ export default function getListStudentIds(students, location, newGrades) {
     if (newGrades.studentId === student.id) {
       student.grade = newGrades.grade;
     }
+
+    return student;
   });
 
   studentsGrades.forEach(student => {
