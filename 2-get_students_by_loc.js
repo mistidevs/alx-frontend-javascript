@@ -1,4 +1,4 @@
-export default function getListStudentIds(students) {
+export default function getListStudentIds(students, location) {
   if (!Array.isArray(students)) {
     return [];
   }
@@ -10,8 +10,8 @@ export default function getListStudentIds(students) {
   if (!students.every(student => student.hasOwnProperty('id'))) {
     return [];
   }
-  
-  const studentIds = students.map(student => student.id);
 
-  return studentIds;
+  const studentsLoc = students.filter(student => student.location === location);
+
+  return studentsLoc;
 }
