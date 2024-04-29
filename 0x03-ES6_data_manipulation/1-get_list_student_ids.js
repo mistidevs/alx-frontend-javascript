@@ -3,11 +3,11 @@ export default function getListStudentIds(students) {
     return [];
   }
 
-  if (!students.every(student => (typeof student === 'object'))) {
+  if (!students.every((student) => typeof student === 'object')) {
     return [];
   }
 
-  const studentIds = students.map(student => (student.id));
+  const studentIds = students.map((student) => student.id);
 
   return studentIds;
 }
