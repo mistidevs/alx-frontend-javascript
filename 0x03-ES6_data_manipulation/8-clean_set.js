@@ -1,8 +1,12 @@
 export default function cleanSet(set, startString) {
  let myString = '';
 
- if (startString === '') {
-  return myString;
+ if (
+  typeof set !== 'object'
+  || typeof startString !== 'string'
+  || startString.length === 0
+ ) {
+  return '';
  }
  
  for (const idx of set) {
